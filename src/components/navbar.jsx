@@ -53,7 +53,7 @@ const Navbar = () => {
         fontWeight="700"
         color="#1d3557"
       >
-        Rec<span style={{ color: "#fca311" }}>i</span>pe
+        Rec<span style={{ color: "#fca311" }}>ii</span>pe
       </Typography>
       {!mobileScreens ? (
         <Box

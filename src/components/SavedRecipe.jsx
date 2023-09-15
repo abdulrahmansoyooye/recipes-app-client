@@ -96,7 +96,7 @@ const SavedRecipe = ({ recipe }) => {
                 sx={{
                   position: "absolute",
                   top: "10%",
-                  margin: mobilescreens ? "1rem auto" : "1rem 5rem",
+                  margin: mobilescreens ? "1rem 2rem" : "1rem 5rem",
                   color: "#FFFF",
                   textAlign: "center",
                 }}

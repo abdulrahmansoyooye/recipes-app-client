@@ -22,7 +22,7 @@ const SavedRecipes = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `https://reciipe-server.onrender.com/savedRecipes/${userId}`
+          `https://reciipe-server.onrender.com/recipes/savedRecipes/${userId}`
         );
         setLoader(false);
         setSavedRecipes(response.data.savedRecipes);
@@ -50,7 +50,6 @@ const SavedRecipes = () => {
               mt: "1rem",
             }}
           >
-            {/* <h2> Recipes </h2> */}
             {error && (
               <Box
                 sx={{
@@ -65,6 +64,7 @@ const SavedRecipes = () => {
                 <Error message={"Failed to load page"} />
               </Box>
             )}
+
             {savedRecipes.map((recipe) => (
               <SavedRecipe recipe={recipe} key={recipe._id} />
             ))}

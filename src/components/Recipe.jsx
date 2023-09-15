@@ -40,7 +40,7 @@ const Recipe = ({ recipe }) => {
   return (
     <Box
       sx={{
-        width: mobilescreens ? "50%" : "400px",
+        width: mobilescreens ? "90%" : "400px",
         padding: "1rem",
         borderRadius: "1rem",
         background: theme.palette.background.alt,

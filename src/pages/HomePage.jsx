@@ -35,7 +35,7 @@ const HomePage = () => {
     const fetchRecipes = async () => {
       try {
         const response = await axios.get(
-          "https://nice-lime-pea-coat.cyclic.cloud/recipes"
+          "https://reciipe-server.onrender.com/recipes"
         );
         setRecipes(response.data);
         setLoader(false);
@@ -49,7 +49,7 @@ const HomePage = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `https://nice-lime-pea-coat.cyclic.cloud/recipes/savedRecipes/ids/${userId}`
+          `https://reciipe-server.onrender.com/recipes/savedRecipes/ids/${userId}`
         );
 
         setSavedRecipes(response.data.savedRecipes);

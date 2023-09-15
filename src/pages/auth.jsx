@@ -37,7 +37,7 @@ const Auth = () => {
     });
     try {
       const response = await axios.post(
-        "https://nice-lime-pea-coat.cyclic.cloud/auth/login",
+        "https://reciipe-server.onrender.com/auth/login",
         {
           username,
           password,
@@ -69,7 +69,7 @@ const Auth = () => {
 
     try {
       const response = await axios.post(
-        "https://nice-lime-pea-coat.cyclic.cloud/auth/register",
+        "https://reciipe-server.onrender.com/auth/register",
         {
           username,
           password,

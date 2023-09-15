@@ -24,7 +24,7 @@ const Recipe = ({ recipe }) => {
   const saveRecipe = async (recipeId) => {
     try {
       const response = await axios.put(
-        "https://nice-lime-pea-coat.cyclic.cloud/recipes",
+        "https://reciipe-server.onrender.com/recipes",
         {
           recipeId,
           userId,
@@ -123,7 +123,7 @@ const Recipe = ({ recipe }) => {
 
           <Box>
             <motion.img
-              src={`https://nice-lime-pea-coat.cyclic.cloud/assets/${recipe.imageUrl}`}
+              src={`https://reciipe-server.onrender.com/assets/${recipe.imageUrl}`}
               alt={recipe.name}
               width="100%"
               height={"300px"}

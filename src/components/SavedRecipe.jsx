@@ -79,7 +79,7 @@ const SavedRecipe = ({ recipe }) => {
           )}
           <Box>
             <motion.img
-              src={`https://nice-lime-pea-coat.cyclic.cloud/assets/${recipe.imageUrl}`}
+              src={`https://reciipe-server.onrender.com/assets/${recipe.imageUrl}`}
               alt={recipe.name}
               width="100%"
               height={"300px"}

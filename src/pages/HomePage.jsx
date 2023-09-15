@@ -34,7 +34,9 @@ const HomePage = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/recipes");
+        const response = await axios.get(
+          "https://nice-lime-pea-coat.cyclic.cloud/recipes"
+        );
         setRecipes(response.data);
         setLoader(false);
       } catch (err) {
@@ -47,7 +49,7 @@ const HomePage = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/recipes/savedRecipes/ids/${userId}`
+          `https://nice-lime-pea-coat.cyclic.cloud/recipes/savedRecipes/ids/${userId}`
         );
 
         setSavedRecipes(response.data.savedRecipes);

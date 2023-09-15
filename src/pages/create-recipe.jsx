@@ -63,7 +63,7 @@ export const CreateRecipe = () => {
     console.log(recipe);
     try {
       const response = await axios.post(
-        "http://localhost:3001/recipes",
+        "https://nice-lime-pea-coat.cyclic.cloud/recipes",
         recipe,
         {
           headers: { authorization: cookies.access_token },

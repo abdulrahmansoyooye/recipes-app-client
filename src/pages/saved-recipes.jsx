@@ -22,7 +22,7 @@ const SavedRecipes = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/recipes/savedRecipes/${userId}`
+          `http:/https://nice-lime-pea-coat.cyclic.cloud/localhost:3001/recipes/savedRecipes/${userId}`
         );
         setLoader(false);
         setSavedRecipes(response.data.savedRecipes);

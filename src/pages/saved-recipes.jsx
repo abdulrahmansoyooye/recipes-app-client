@@ -42,6 +42,18 @@ const SavedRecipes = () => {
         <Loader />
       ) : (
         <Box>
+          {savedRecipes.length === 0 && (
+            <Typography
+              variant="h3"
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              height={"80vh"}
+              color={"#14213d"}
+            >
+              No saved Recipes.
+            </Typography>
+          )}
           <Box
             sx={{
               display: !mobileScreens && "flex",

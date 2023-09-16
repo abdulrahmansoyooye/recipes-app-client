@@ -17,3 +17,6 @@ body,
   background-color: #ccc;
   border-radius: 5px;
 }
+.MuiTextField-root {
+  color: #fff;
+}

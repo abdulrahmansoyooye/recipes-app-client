@@ -7,15 +7,19 @@ import Navbar from "./components/navbar";
 import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@emotion/react";
-import theme from "./theme";
+import { themeSettings } from "./theme";
+import { useMemo, useState } from "react";
+import { createTheme } from "@mui/material";
 
 function App() {
+  const [mode, setMode] = useState("light");
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
     <div>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
-          <Navbar />
+          <Navbar mode={mode} setMode={setMode} />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/auth" element={<Auth />} />

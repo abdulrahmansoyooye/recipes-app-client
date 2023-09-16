@@ -208,6 +208,9 @@ const Form = ({
           onChange={(e) => {
             setuserData({ ...userData, username: e.target.value });
           }}
+          style={{
+            color: "#FFFF",
+          }}
           value={username}
           required
         />
@@ -220,6 +223,9 @@ const Form = ({
           }}
           sx={{
             gridColumn: mobileScreens ? "1/ span 2" : "2",
+          }}
+          style={{
+            color: "#FFFF",
           }}
           required
         />

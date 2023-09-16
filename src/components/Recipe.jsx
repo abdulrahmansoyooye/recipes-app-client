@@ -17,7 +17,7 @@ const Recipe = ({ recipe }) => {
   const [cookies, _] = useCookies(["access_token"]);
   const userId = useGetUserId();
   const mobilescreens = useMediaQuery("(max-width:800px)");
-
+  const [loader, setLoader] = useState(false);
   const [hovered, setHovered] = useState(false);
 
   const theme = useTheme();
@@ -57,7 +57,11 @@ const Recipe = ({ recipe }) => {
         transition={{ ease: "easeOut", duration: 0.5 }}
       >
         <Box>
-          <Typography variant="h3" sx={{ textAlign: "center", mb: "1rem" }}>
+          <Typography
+            variant="h3"
+            sx={{ textAlign: "center", mb: "1rem" }}
+            color={theme.palette.primary.light}
+          >
             {recipe.name}
           </Typography>
           <Divider />
@@ -157,6 +161,7 @@ const Recipe = ({ recipe }) => {
             textAlign: "center",
             mt: "1rem",
           }}
+          color={theme.palette.primary.light}
         >
           Cooking Time {recipe.cookingTime} (minutes)
         </Typography>

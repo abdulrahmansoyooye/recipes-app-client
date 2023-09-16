@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import {
   Box,
   Button,
+  Icon,
   IconButton,
   Menu,
   Typography,
@@ -17,9 +18,11 @@ import {
   AddCircleOutlineOutlined,
   CloseRounded,
   CreateOutlined,
+  DarkMode,
   FavoriteRounded,
   GradeOutlined,
   Home,
+  LightMode,
   Person2Outlined,
   Person2Rounded,
   PersonRemoveOutlined,
@@ -27,7 +30,7 @@ import {
 } from "@mui/icons-material";
 import Wrapper from "./Wrapper";
 
-const Navbar = () => {
+const Navbar = ({ setMode, mode }) => {
   const [cookies, setCookies] = useCookies(["access_token"]);
   const navigate = useNavigate();
   const mobileScreens = useMediaQuery("(max-width:1000px)");
@@ -53,7 +56,7 @@ const Navbar = () => {
         onClick={() => navigate("/")}
         fontSize="30px"
         fontWeight="700"
-        color="#1d3557"
+        color={theme.palette.primary.light}
       >
         Rec<span style={{ color: "#fca311" }}>ii</span>pe
       </Typography>
@@ -61,7 +64,7 @@ const Navbar = () => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "space-around",
             width: "40%",
           }}
         >
@@ -71,18 +74,29 @@ const Navbar = () => {
               style={{
                 textDecoration: "none",
               }}
-              color="#011627"
+              color={theme.palette.primary.light}
             >
               Create
             </Typography>
           </Button>
 
           {!cookies.access_token ? (
-            <Button variant="outlined" startIcon={<Person2Rounded />}>
-              <Typography onClick={() => navigate("/auth")} color="#011627">
-                Sign Up
-              </Typography>
-            </Button>
+            <>
+              <Button variant="outlined" startIcon={<Person2Rounded />}>
+                <Typography
+                  onClick={() => navigate("/auth")}
+                  color={theme.palette.primary.light}
+                >
+                  Sign Up
+                </Typography>
+              </Button>
+              <IconButton
+                variant="outlined"
+                onClick={() => setMode(mode === "dark" ? "light" : "dark")}
+              >
+                {mode === "light" ? <DarkMode /> : <LightMode />}
+              </IconButton>
+            </>
           ) : (
             <>
               <Button variant="outlined" startIcon={<StarOutlineRounded />}>
@@ -100,6 +114,12 @@ const Navbar = () => {
               >
                 <Typography color="#011627">Sign Out</Typography>
               </Button>
+              <IconButton
+                variant="outlined"
+                onClick={() => setMode(mode === "dark" ? "light" : "dark")}
+              >
+                {mode === "light" ? <DarkMode /> : <LightMode />}
+              </IconButton>
             </>
           )}
         </Box>
@@ -115,7 +135,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, x: 0 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ ease: "easeOut", duration: 1 }}
+          transition={{ ease: "easeOut", duration: 0.5 }}
           style={{
             zIndex: "20",
           }}
@@ -152,7 +172,7 @@ const Navbar = () => {
                 style={{
                   textDecoration: "none",
                 }}
-                color="#FFFFF"
+                color="#FFFF"
               >
                 Create
               </Typography>
@@ -190,8 +210,20 @@ const Navbar = () => {
                 >
                   <Typography color="#FFFFF">Sign Out</Typography>
                 </Button>
+                <IconButton
+                  variant="outlined"
+                  onClick={() => setMode(mode === "dark" ? "light" : "dark")}
+                >
+                  {mode === "light" ? <DarkMode /> : <LightMode />}
+                </IconButton>
               </>
             )}
+            <IconButton
+              variant="outlined"
+              onClick={() => setMode(mode === "dark" ? "light" : "dark")}
+            >
+              {mode === "light" ? <DarkMode /> : <LightMode />}
+            </IconButton>
           </Box>
         </motion.div>
       )}

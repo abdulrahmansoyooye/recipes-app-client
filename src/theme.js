@@ -92,7 +92,7 @@ export const themeSettings = (mode) => {
               styleOverrides: {
                 root: {
                   cursor: "pointer",
-                  color: "#ffff",
+                  color: "#ffffff",
                 },
               },
             },
@@ -108,7 +108,7 @@ export const themeSettings = (mode) => {
             MuiTextField: {
               styleOverrides: {
                 root: {
-                  color: "#ffff",
+                  color: "#14213d",
                 },
               },
             },

@@ -6,29 +6,22 @@ import { motion } from "framer-motion";
 import {
   Box,
   Button,
-  Icon,
   IconButton,
-  Menu,
   Typography,
   useMediaQuery,
 } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { useTheme } from "@emotion/react";
 import {
-  AddCircleOutlineOutlined,
   CloseRounded,
   CreateOutlined,
   DarkMode,
-  FavoriteRounded,
-  GradeOutlined,
-  Home,
   LightMode,
   Person2Outlined,
   Person2Rounded,
   PersonRemoveOutlined,
   StarOutlineRounded,
 } from "@mui/icons-material";
-import Wrapper from "./Wrapper";
 
 const Navbar = ({ setMode, mode }) => {
   const [cookies, setCookies] = useCookies(["access_token"]);
@@ -55,10 +48,10 @@ const Navbar = ({ setMode, mode }) => {
       <Typography
         onClick={() => navigate("/")}
         fontSize="30px"
-        fontWeight="700"
-        color={theme.palette.primary.light}
+        fontWeight="500"
+        className="bg-black"
       >
-        Rec<span style={{ color: "#fca311" }}>ii</span>pe
+        Rec<span color={theme.palette.primary.alt}>ii</span>pees
       </Typography>
       {!mobileScreens ? (
         <Box
@@ -90,19 +83,19 @@ const Navbar = ({ setMode, mode }) => {
                   Sign Up
                 </Typography>
               </Button>
-              <IconButton
+              {/* <IconButton
                 variant="outlined"
                 onClick={() => setMode(mode === "dark" ? "light" : "dark")}
               >
                 {mode === "light" ? <DarkMode /> : <LightMode />}
-              </IconButton>
+              </IconButton> */}
             </>
           ) : (
             <>
               <Button variant="outlined" startIcon={<StarOutlineRounded />}>
                 <Typography
                   onClick={() => navigate("/saved-recipes")}
-                  color="#011627"
+                  // color="#011627"
                 >
                   Saved
                 </Typography>
@@ -112,14 +105,14 @@ const Navbar = ({ setMode, mode }) => {
                 variant="outlined"
                 startIcon={<PersonRemoveOutlined />}
               >
-                <Typography color="#011627">Sign Out</Typography>
+                <Typography>Sign Out</Typography>
               </Button>
-              <IconButton
+              {/* <IconButton
                 variant="outlined"
                 onClick={() => setMode(mode === "dark" ? "light" : "dark")}
               >
                 {mode === "light" ? <DarkMode /> : <LightMode />}
-              </IconButton>
+              </IconButton> */}
             </>
           )}
         </Box>
@@ -208,22 +201,20 @@ const Navbar = ({ setMode, mode }) => {
                   variant="outlined"
                   startIcon={<PersonRemoveOutlined />}
                 >
-                  <Typography color="#FFFFF">Sign Out</Typography>
+                  <Typography color="#FFFF">Sign Out</Typography>
                 </Button>
-                <IconButton
+                {/* <IconButton
                   variant="outlined"
                   onClick={() => setMode(mode === "dark" ? "light" : "dark")}
-                >
-                  {mode === "light" ? <DarkMode /> : <LightMode />}
-                </IconButton>
+                ></IconButton> */}
               </>
             )}
-            <IconButton
+            {/* <IconButton
               variant="outlined"
               onClick={() => setMode(mode === "dark" ? "light" : "dark")}
             >
               {mode === "light" ? <DarkMode /> : <LightMode />}
-            </IconButton>
+            </IconButton> */}
           </Box>
         </motion.div>
       )}

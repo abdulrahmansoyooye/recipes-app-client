@@ -61,7 +61,7 @@ const HomePage = () => {
     fetchRecipes();
     fetchSavedRecipes();
   }, []);
-
+   
   return (
     <Box>
       {loader ? (

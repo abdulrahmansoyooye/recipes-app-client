@@ -2,18 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import { DeleteOutlineOutlined, Label } from "@mui/icons-material";
 import {
   Box,
   Button,
   TextField,
-  TextareaAutosize,
   Typography,
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import AlertPage from "../components/Alert/AlertPage";
-import { Alert } from "@mui/joy";
 import Error from "../components/Alert/Error";
 const Auth = () => {
   const [pageType, setPageType] = useState("login");
@@ -68,13 +65,10 @@ const Auth = () => {
     });
 
     try {
-      const response = await axios.post(
-        "https://reciipe-server.onrender.com/auth/register",
-        {
-          username,
-          password,
-        }
-      );
+      await axios.post("https://reciipe-server.onrender.com/auth/register", {
+        username,
+        password,
+      });
       setTimeout(() => {
         setAlert(false);
 

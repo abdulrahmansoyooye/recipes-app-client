@@ -119,7 +119,7 @@ const Recipe = ({ recipe }) => {
                     borderRadius: "1rem",
                   }}
                 >
-                  <Typography>{recipe.instructions}</Typography>
+                  <Typography color={"#FFFF"}>{recipe.instructions}</Typography>
                 </Box>
               </Box>
             </motion.div>

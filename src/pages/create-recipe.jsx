@@ -100,15 +100,7 @@ export const CreateRecipe = () => {
       >
         {alert && <AlertPage message="Recipe Created" />}
 
-        <Typography
-          variant="h3"
-          fontWeight="500"
-          textAlign="center"
-          mb="1rem"
-          sx={{
-            color: "#14213d",
-          }}
-        >
+        <Typography variant="h3" fontWeight="500" textAlign="center" mb="1rem">
           Create Recipe
         </Typography>
 
@@ -125,6 +117,7 @@ export const CreateRecipe = () => {
               name="name"
               onChange={handleChange}
               placeholder="Recipe Name"
+             
               sx={{
                 gridColumn: mobileScreens ? "span 2" : 1,
               }}
